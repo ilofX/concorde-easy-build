@@ -420,7 +420,7 @@ static int repeated_lin_kernighan (graph *G, distobj *D, int *cyc,
     int quitcount, hit, delta;
     int *win_cycle = (int *) NULL;
     CCkdtree kdt;
-    flipstack winstack, fstack;
+    flipstack winstack = { NULL, 0 ,0}, fstack = { NULL, 0,0 };
     double t, best = *val, oldbest = *val;
     double szeit = CCutil_zeit ();
 #ifdef ACCEPT_BAD_TOURS
